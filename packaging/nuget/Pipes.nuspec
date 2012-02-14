@@ -1,0 +1,26 @@
+<?xml version="1.0"?>
+<package xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <metadata xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+    <id>Pipes</id>
+    <version>1.0.0</version>
+    <authors>Jaime Febres, Alex Henning Johannessen</authors>
+    <owners>Jaime Febres, Alex Henning Johannessen</owners>
+    <licenseUrl>https://raw.github.com/zeitgarden/Pipes/master/license.txt</licenseUrl>
+    <projectUrl>https://github.com/zeitgarden/Pipes</projectUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>Event Aggregator library built on top of FubuMVC</description>
+    <tags>messaging fubu pipes</tags>
+    <dependencies>
+      <dependency id="Bottles" />
+      <dependency id="CommonServiceLocator" />
+      <dependency id="FubuCore" />
+      <dependency id="FubuLocalization" />
+      <dependency id="FubuMVC.References" />
+      <dependency id="HtmlTags" version="1.0.0" />
+      <dependency id="StructureMap" />
+    </dependencies>
+  </metadata>
+  <files>
+    <file src="..\..\build\Pipes.dll" target="lib\net40" />
+  </files>
+</package>
