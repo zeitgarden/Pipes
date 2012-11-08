@@ -2,6 +2,7 @@ require 'rubygems'
 require 'albacore'
 require 'rake/clean'
 include FileTest
+load "version.txt"
 
 COMPILE_TARGET = (ENV['config'] || "Debug")
 CLR_TOOLS_VERSION = "v4.0.30319"
@@ -22,6 +23,11 @@ PRODUCT = "Pipes"
 RESULTS_DIR = "results"
 SRC_DIR = "src"
 STAGE_DIR = "build"
+
+tc_build_number = ENV["BUILD_NUMBER"]
+build_revision = tc_build_number || Time.new.strftime('5%H%M')
+BUILD_NUMBER = "#{BUILD_VERSION}.#{build_revision}"
+
 
 # Add directories to Rake's clean task
 CLEAN.include(STAGE_DIR, ARTIFACTS)
@@ -50,20 +56,21 @@ task :default => [:compile, :unit_test]
 
 desc "Update the version information for the build"
 assemblyinfo :version do |asm|
+  asm_version = BUILD_VERSION + ".0"
 
-  tc_build_number = ENV["BUILD_NUMBER"]
-  # build script interaction with teamcity
-  puts "##teamcity[buildNumber '#{build_number}-#{tc_build_number}']" unless tc_build_number.nil?
-
-  commit = `git log -1 --pretty=format:%H`
-  commit = "git unavailable" if $? != 0 # $? == exit status of the last child process to finish
-
+  begin
+    commit = `git log -1 --pretty=format:%H`
+  rescue
+    commit = "git unavailable"
+  end
+  puts "##teamcity[buildNumber '#{BUILD_NUMBER}']" unless tc_build_number.nil?
+  puts "Version: #{BUILD_NUMBER}" if tc_build_number.nil?
   asm.trademark = commit
-  asm.product_name = "#{PRODUCT} #{build_number}"
-  asm.description = build_number
-  asm.version = build_number
-  asm.file_version = build_number
-  asm.custom_attributes :AssemblyInformationalVersion => build_number
+  asm.product_name = PRODUCT
+  asm.description = BUILD_NUMBER
+  asm.version = asm_version
+  asm.file_version = BUILD_NUMBER
+  asm.custom_attributes :AssemblyInformationalVersion => asm_version
   asm.copyright = COPYRIGHT
   asm.output_file = COMMON_ASSEMBLY_INFO
 
