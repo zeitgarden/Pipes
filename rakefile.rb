@@ -88,12 +88,6 @@ def gittag
   @gittag = versionpart.nil? ? [0, 0, 0, 0] : versionpart[1..5]
 end
 
-def build_number
-  return @build_number if @build_number
-
-  @build_number = gittag.join('.')
-end
-
 desc "Compiles the app"
 task :compile => [:clean, :restore_if_missing, :version] do
   MSBuildRunner.compile :compilemode => COMPILE_TARGET, :solutionfile => 'src/Pipes.sln', :clrversion => CLR_TOOLS_VERSION
@@ -120,15 +114,12 @@ task :unit_test => :compile do
 end
 
 desc "Target used for the CI server"
-task :ci => [:default,:package]
+task :ci => [:default,:create_package]
 
 desc "ZIPs up the build results"
-zip :package do |zip|
+zip :create_package do |zip|
         mkdir_p ARTIFACTS
         zip.directories_to_zip = [STAGE_DIR]
-        zip.output_file = 'Pipes.-'+ build_number + '.zip'
+        zip.output_file = 'Pipes.'+ BUILD_NUMBER + '.zip'
         zip.output_path = [ARTIFACTS]
 end
-
-
-
