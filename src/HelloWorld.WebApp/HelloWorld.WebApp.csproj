@@ -103,7 +103,6 @@
     <Content Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <None Include=".links" />
     <Content Include="app.script.config" />
     <None Include="Index.spark" />
   </ItemGroup>
