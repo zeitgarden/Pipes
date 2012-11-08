@@ -22,3 +22,5 @@ _ReSharper.*/
 *.pidb
 *.DS_Store
 TestResult.xml
+bottles.cmd
+fubu.cmd

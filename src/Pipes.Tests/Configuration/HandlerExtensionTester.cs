@@ -11,7 +11,7 @@ namespace Pipes.Tests.Configuration
     [TestFixture]
     public class HandlerExtensionTester : InteractionContext<HandlerExtension>
     {
-        private IServiceRegistry _services;
+        private ServiceGraph _services;
 
         protected override void beforeEach()
         {
