@@ -1,6 +1,6 @@
 ﻿using System;
 using Pipes;
-using Pipes.Configuration.StructureMap;
+using Pipes.StructureMap;
 using StructureMap;
 
 namespace HelloWorld.ConsoleApp

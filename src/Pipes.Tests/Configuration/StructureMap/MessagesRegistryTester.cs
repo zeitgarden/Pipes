@@ -2,7 +2,7 @@
 using Bottles;
 using FubuTestingSupport;
 using NUnit.Framework;
-using Pipes.Configuration.StructureMap;
+using Pipes.StructureMap;
 
 namespace Pipes.Tests.Configuration.StructureMap
 {

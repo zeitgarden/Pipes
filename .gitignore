@@ -24,3 +24,4 @@ _ReSharper.*/
 TestResult.xml
 bottles.cmd
 fubu.cmd
+/src/HelloWorld.WebApp/fubu-content

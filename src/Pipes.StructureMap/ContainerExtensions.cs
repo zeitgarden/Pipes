@@ -3,7 +3,7 @@ using Bottles;
 using Bottles.Diagnostics;
 using StructureMap;
 
-namespace Pipes.Configuration.StructureMap
+namespace Pipes.StructureMap
 {
     public static class ContainerExtensions
     {

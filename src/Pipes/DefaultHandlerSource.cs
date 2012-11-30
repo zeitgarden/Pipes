@@ -34,7 +34,7 @@ namespace Pipes
 
         public IEnumerable<Type> GetHandlers()
         {
-            var pool = new TypePool(null);
+            var pool = new TypePool();
             _actions.Do(pool);
             return pool.TypesMatching(_filter.MatchesAll);
         }

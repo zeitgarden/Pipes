@@ -1,28 +1,30 @@
 ﻿using System;
+using FubuCore;
+using FubuMVC.Core.Bootstrapping;
 using FubuMVC.Core.Registration.ObjectGraph;
-using FubuMVC.StructureMap;
-using StructureMap;
 
 namespace Pipes
 {
     public class HandlerEngine : IHandlerFactory, IHandlerFacility
     {
-        private readonly IContainer _container;
+        private readonly IContainerFacility _containerFacility;
+        private readonly IServiceLocator _serviceLocator;
 
-        public HandlerEngine(IContainer container)
+        public HandlerEngine(IContainerFacility containerFacility, IServiceLocator serviceLocator)
         {
-            _container = container;
+            _containerFacility = containerFacility;
+            _serviceLocator = serviceLocator;
         }
 
         public IHandler<T> GetHandler<T>(Guid id)
         {
-            return _container.GetInstance<IHandler<T>>(id.ToString());
+            return _serviceLocator.GetInstance<IHandler<T>>(id.ToString());
         }
 
         public void Register(Type messageType, ObjectDef def)
         {
             var handlerType = typeof(IHandler<>).MakeGenericType(messageType);
-            _container.Configure(x => x.For(handlerType).Add(new ObjectDefInstance(def)));
+            _containerFacility.Register(handlerType, def);
         }
     }
 }

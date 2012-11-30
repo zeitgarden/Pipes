@@ -1,16 +1,16 @@
 ﻿using Bottles;
 using StructureMap.Configuration.DSL;
 
-namespace Pipes.Configuration.StructureMap
+namespace Pipes.StructureMap
 {
     public class MessagesRegistry : Registry
     {
         public MessagesRegistry()
         {
             For<MessageGraph>().Use(new MessageGraph());
-
-            For<IHandlerFacility>().Use<HandlerEngine>();
-            For<IHandlerFactory>().Use<HandlerEngine>();
+            
+            For<IHandlerFacility>().Use<StructureMapHandlerEngine>();
+            For<IHandlerFactory>().Use<StructureMapHandlerEngine>();
             For<IPublisher>().Use<Publisher>();
 
             For<IHandlerPolicy>().Add<WrapWithConditionalAttributeConvention>();

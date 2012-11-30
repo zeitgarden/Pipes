@@ -17,7 +17,8 @@ namespace Pipes.Tests.Configuration
         {
             var registry = new FubuRegistry();
             ClassUnderTest.Configure(registry);
-            _services = registry.BuildGraph().Services;
+            
+            _services = BehaviorGraph.BuildFrom(registry).Services;
         }
 
         [Test]

@@ -11,7 +11,7 @@ namespace Pipes.Configuration
             registry.Services(services);
         }
 
-        private static void services(IServiceRegistry services)
+        private static void services(ServiceRegistry services)
         {
             services.SetServiceIfNone(new MessageGraph());
             services.SetServiceIfNone<IHandlerFacility, HandlerEngine>();
