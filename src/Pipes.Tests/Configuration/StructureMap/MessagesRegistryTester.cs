@@ -23,19 +23,19 @@ namespace Pipes.Tests.Configuration.StructureMap
         }
 
         [Test]
-        public void handlers_engine_is_set_as_handler_facility()
+        public void structuremap_handler_engine_is_set_as_handler_facility()
         {
             Container.GetAllInstances<IHandlerFacility>()
                 .ShouldHaveCount(1)
-                .First().GetType().ShouldEqual(typeof(HandlerEngine));
+                .First().GetType().ShouldEqual(typeof(StructureMapHandlerEngine));
         }
 
         [Test]
-        public void handlers_engine_is_set_as_handler_factory()
+        public void structuremap_handler_engine_is_set_as_handler_factory()
         {
             Container.GetAllInstances<IHandlerFactory>()
                 .ShouldHaveCount(1)
-                .First().GetType().ShouldEqual(typeof (HandlerEngine));
+                .First().GetType().ShouldEqual(typeof(StructureMapHandlerEngine));
         }
 
         [Test]
