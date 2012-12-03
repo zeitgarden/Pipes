@@ -1,5 +1,8 @@
 using System;
+using FubuCore;
+using FubuMVC.Core.Bootstrapping;
 using FubuMVC.Core.Registration.ObjectGraph;
+using FubuMVC.StructureMap;
 using FubuTestingSupport;
 using NUnit.Framework;
 
@@ -17,8 +20,11 @@ namespace Pipes.Tests
             _handler = MockFor<IHandler<NewUserMessage>>();
             _handlerId = Guid.NewGuid();
             _handlerDef = ObjectDef.ForType<GenericHandler1<LogoutMessage>>();
+            Container.Configure(x => x.For<IServiceLocator>().Use(new StructureMapServiceLocator(Container)));
+            Container.Configure(x => x.For<IContainerFacility>().Use(new StructureMapContainerFacility(Container)));
             Container.Configure(x => x.For<IHandler<NewUserMessage>>().Add(_handler).Named(_handlerId.ToString()));
             ClassUnderTest.Register(typeof(LogoutMessage), _handlerDef);
+            Container.GetInstance<IContainerFacility>().BuildFactory();
         }
 
         [Test]
