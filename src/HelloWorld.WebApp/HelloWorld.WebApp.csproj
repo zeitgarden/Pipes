@@ -45,13 +45,13 @@
       <HintPath>..\packages\FubuMVC.Core.0.9.9.1326\lib\net40\FubuMVC.Core.dll</HintPath>
     </Reference>
     <Reference Include="FubuMVC.Core.Assets">
-      <HintPath>..\packages\FubuMVC.Core.Assets.0.9.9.74\lib\net40\FubuMVC.Core.Assets.dll</HintPath>
+      <HintPath>..\packages\FubuMVC.Core.Assets.0.9.9.75\lib\net40\FubuMVC.Core.Assets.dll</HintPath>
     </Reference>
     <Reference Include="FubuMVC.Core.UI">
       <HintPath>..\packages\FubuMVC.Core.UI.0.9.9.87\lib\net40\FubuMVC.Core.UI.dll</HintPath>
     </Reference>
     <Reference Include="FubuMVC.Core.View">
-      <HintPath>..\packages\FubuMVC.Core.View.0.9.9.77\lib\net40\FubuMVC.Core.View.dll</HintPath>
+      <HintPath>..\packages\FubuMVC.Core.View.0.9.9.78\lib\net40\FubuMVC.Core.View.dll</HintPath>
     </Reference>
     <Reference Include="FubuMVC.Diagnostics">
       <HintPath>..\packages\FubuMVC.Diagnostics.0.1.0.155\lib\net40\FubuMVC.Diagnostics.dll</HintPath>
@@ -60,16 +60,16 @@
       <HintPath>..\packages\FubuMVC.JQueryUI.0.5.0.173\lib\net40\FubuMVC.JQueryUI.dll</HintPath>
     </Reference>
     <Reference Include="FubuMVC.Media">
-      <HintPath>..\packages\FubuMVC.Media.0.9.5.263\lib\net40\FubuMVC.Media.dll</HintPath>
+      <HintPath>..\packages\FubuMVC.Media.0.9.5.264\lib\net40\FubuMVC.Media.dll</HintPath>
     </Reference>
     <Reference Include="FubuMVC.Navigation">
-      <HintPath>..\packages\FubuMVC.Navigation.0.9.0.36\lib\net40\FubuMVC.Navigation.dll</HintPath>
+      <HintPath>..\packages\FubuMVC.Navigation.0.9.0.37\lib\net40\FubuMVC.Navigation.dll</HintPath>
     </Reference>
     <Reference Include="FubuMVC.SlickGrid">
-      <HintPath>..\packages\FubuMVC.SlickGrid.0.0.0.188\lib\net40\FubuMVC.SlickGrid.dll</HintPath>
+      <HintPath>..\packages\FubuMVC.SlickGrid.0.0.0.190\lib\net40\FubuMVC.SlickGrid.dll</HintPath>
     </Reference>
     <Reference Include="FubuMVC.Spark">
-      <HintPath>..\packages\FubuMVC.Spark.0.9.9.77\lib\net40\FubuMVC.Spark.dll</HintPath>
+      <HintPath>..\packages\FubuMVC.Spark.0.9.9.78\lib\net40\FubuMVC.Spark.dll</HintPath>
     </Reference>
     <Reference Include="FubuMVC.StructureMap">
       <HintPath>..\packages\FubuMVC.StructureMap.0.9.9.1326\lib\net40\FubuMVC.StructureMap.dll</HintPath>
