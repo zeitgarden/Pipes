@@ -103,7 +103,7 @@
     <Compile Include="HandlerDiscoverTester.cs" />
     <Compile Include="HandlerPolicyRunnerTester.cs" />
     <Compile Include="HandlerRegisterTester.cs" />
-    <Compile Include="HandlersEngineTester.cs" />
+    <Compile Include="HandlerFactoryTester.cs" />
     <Compile Include="LogoutMessage.cs" />
     <Compile Include="Never.cs" />
     <Compile Include="NewUserMessage.cs" />

@@ -9,7 +9,7 @@ using NUnit.Framework;
 namespace Pipes.Tests
 {
     [TestFixture]
-    public class HandlersEngineTester : InteractionContext<HandlerEngine>
+    public class HandlerFactoryTester : InteractionContext<HandlerFactory>
     {
         private IHandler<NewUserMessage> _handler;
         private Guid _handlerId;
@@ -22,8 +22,9 @@ namespace Pipes.Tests
             _handlerDef = ObjectDef.ForType<GenericHandler1<LogoutMessage>>();
             Container.Configure(x => x.For<IServiceLocator>().Use(new StructureMapServiceLocator(Container)));
             Container.Configure(x => x.For<IContainerFacility>().Use(new StructureMapContainerFacility(Container)));
+            Container.Configure(x => x.For<IHandlerFacility>().Use<HandlerFacility>());
             Container.Configure(x => x.For<IHandler<NewUserMessage>>().Add(_handler).Named(_handlerId.ToString()));
-            ClassUnderTest.Register(typeof(LogoutMessage), _handlerDef);
+            Container.GetInstance<IHandlerFacility>().Register(typeof(LogoutMessage), _handlerDef);
             Container.GetInstance<IContainerFacility>().BuildFactory();
         }
 

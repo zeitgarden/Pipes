@@ -58,6 +58,7 @@
     <Compile Include="..\CommonAssemblyInfo.cs">
       <Link>Properties\CommonAssemblyInfo.cs</Link>
     </Compile>
+    <Compile Include="HandlerFacility.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="DefaultHandlerSource.cs" />
     <Compile Include="Configuration\DSL\FubuRegistryExtensions.cs" />
@@ -72,7 +73,7 @@
     <Compile Include="HandlerPolicyRunner.cs" />
     <Compile Include="HandlerRegister.cs" />
     <Compile Include="Configuration\HandlerExtension.cs" />
-    <Compile Include="HandlerEngine.cs" />
+    <Compile Include="HandlerFactory.cs" />
     <Compile Include="IHandlerFacility.cs" />
     <Compile Include="IHandlerFactory.cs" />
     <Compile Include="IHandlerPolicy.cs" />

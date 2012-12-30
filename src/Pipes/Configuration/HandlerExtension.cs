@@ -14,8 +14,8 @@ namespace Pipes.Configuration
         private static void services(ServiceRegistry services)
         {
             services.SetServiceIfNone(new MessageGraph());
-            services.SetServiceIfNone<IHandlerFacility, HandlerEngine>();
-            services.SetServiceIfNone<IHandlerFactory, HandlerEngine>();
+            services.SetServiceIfNone<IHandlerFacility, HandlerFacility>();
+            services.SetServiceIfNone<IHandlerFactory, HandlerFactory>();
             services.SetServiceIfNone<IPublisher, Publisher>();
 
             services.FillType<IHandlerPolicy, WrapWithConditionalAttributeConvention>();

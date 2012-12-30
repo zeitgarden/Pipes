@@ -30,19 +30,19 @@ namespace Pipes.Tests.Configuration
         }
 
         [Test]
-        public void handlers_engine_is_set_as_handler_facility()
+        public void handler_facility_is_set_as_handler_facility()
         {
             _services.ServicesFor<IHandlerFacility>()
                 .ShouldHaveCount(1)
-                .First().Type.ShouldEqual(typeof (HandlerEngine));
+                .First().Type.ShouldEqual(typeof (HandlerFacility));
         }
 
         [Test]
-        public void handlers_engine_is_set_as_handler_factory()
+        public void handler_engine_is_set_as_handler_factory()
         {
             _services.ServicesFor<IHandlerFactory>()
                 .ShouldHaveCount(1)
-                .First().Type.ShouldEqual(typeof(HandlerEngine));
+                .First().Type.ShouldEqual(typeof(HandlerFactory));
         }
 
         [Test]
